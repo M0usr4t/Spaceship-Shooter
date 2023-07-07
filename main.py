@@ -1,10 +1,14 @@
 import pygame
 import os
 pygame.font.init()
-pygame.mixer.init() #for sounds
+pygame.mixer.init() #for sounds 
+import pyglet
+
 
 
 #global variables
+#BULLET_HIT_SOUND = pyglet.media.load('Assets/Grenade_1.mp3', streaming=False)
+#BULLET_FIRE_SOUND = pyglet.media.load('Assets/Gun_Silencer.mp3', streaming=False)
 WIDTH, HEIGHT = 900, 500 #define constant values in caps for convention sake
 WIN = pygame.display.set_mode((WIDTH,HEIGHT)) #displays game
 pygame.display.set_caption("It a game alright")
@@ -123,10 +127,10 @@ def main():
                     BULLET_FIRE_SOUND.play()
             if event.type == RED_HIT:
                 red_health -= 1
-                BULLET_HIT_SOUND.PLAY()
+                BULLET_HIT_SOUND.play()
             if event.type == YELLOW_HIT:
                 yellow_health -= 1
-                BULLET_HIT_SOUND.PLAY()
+                BULLET_HIT_SOUND.play()
         winner_text = ""        
         if red_health <= 0:
             winner_text = "Yellow wins!"
