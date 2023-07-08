@@ -1,3 +1,4 @@
+import random
 import pygame
 import os
 pygame.font.init()
@@ -86,7 +87,8 @@ def handle_bullets(yellow_bullets,red_bullets,yellow,red):
             pygame.event.post(pygame.event.Event(RED_HIT))
             yellow_bullets.remove(bullet)  
         elif bullet.x > WIDTH:
-            yellow_bullets.remove(bullet)             
+            yellow_bullets.remove(bullet)
+
     for bullet in red_bullets:
         bullet.x -= BULLET_VELOCITY
         if yellow.colliderect(bullet): #checks if yellow bullet collided with red, boolean
@@ -147,4 +149,5 @@ def main():
     main()
     
 if __name__ == "__main__": #only runs main function if we run this file directly
+ 
     main()
