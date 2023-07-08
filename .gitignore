@@ -1,0 +1,9 @@
+# Ignore Python virtual environment files
+venv/
+.venv/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore sensitive information
+secret_config.py
